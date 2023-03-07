@@ -1,0 +1,26 @@
+@import "./normalize.scss";
+@import "./variables.scss";
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root {
+  font-size: 10px;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: "Lato";
+  background-color: $primary-color;
+}

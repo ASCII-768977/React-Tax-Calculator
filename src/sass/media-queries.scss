@@ -1,0 +1,30 @@
+$S: 480px;
+$M: 768px;
+$L: 1024px;
+$XL: 1200px;
+
+@mixin MQ($canvas) {
+  @if $canvas==S {
+    @media screen and (max-width: $S) {
+      @content;
+    }
+  }
+
+  @else if $canvas==M {
+    @media screen and (max-width: $M) {
+      @content;
+    }
+  }
+
+  @else if $canvas==L {
+    @media screen and (max-width: $L) {
+      @content;
+    }
+  }
+
+  @else if $canvas==XL {
+    @media screen and (max-width: $XL) {
+      @content;
+    }
+  }
+}

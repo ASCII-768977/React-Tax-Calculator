@@ -1,0 +1,462 @@
+//variables
+@import "./variables.scss";
+@import "./media-queries.scss";
+
+.app-background {
+  background-color: #fff;
+  box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.25);
+  border-radius: 0.5rem;
+  width: 764px;
+  height: 512px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: 0.5s;
+
+  // -webkit- (Chrome, Safari, newer versions of Opera and Edge, almost all iOS browsers including Firefox for iOS; basically, any WebKit or Chromium-based browser) 
+  // -moz- (Firefox)
+  // -ms- (Internet Explorer and Microsoft Edge, before Chromium)
+  // -o- (old pre-WebKit versions of Opera)
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+@mixin earth {
+  width: 220px;
+  height: 203.64px;
+  background: linear-gradient(117.38deg,
+      #e7e6ff 10.73%,
+      rgba(231, 230, 255, 0) 84.05%);
+  border-radius: 50%;
+}
+
+@mixin moon {
+  width: 36px;
+  height: 36px;
+  background: #e7e7ff;
+  box-shadow: -10px 13px 3px rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+}
+
+.label-description {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  color: #000000;
+  margin-bottom: -8px;
+  white-space: nowrap;
+}
+
+.form-heading {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 38px;
+
+  /* identical to box height */
+  color: #000000;
+}
+
+.select-input {
+  width: 300px;
+  height: 40px;
+
+  border: 1px solid #a4a4a4;
+  border-radius: 5px;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><path fill='%23a4a4a4' d='M7 10l5 5 5-5z'/></svg>") no-repeat 95% 50%;
+
+  text-indent: 13.73px;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.amount-input {
+  width: 300px;
+  height: 40px;
+  border: 1px solid #a4a4a4;
+  border-radius: 3px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+
+  &-sign {
+    width: 30px;
+    height: 30px;
+    font-weight: 500;
+    line-height: 17px;
+    left: 13.73px;
+    top: 10px;
+    position: absolute;
+  }
+
+  &-field {
+    border: none;
+    outline: none;
+    margin: 0;
+    width: 80%;
+  }
+
+  &-field::-webkit-outer-spin-button,
+  &-field::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+  &-foot {
+    font-weight: 500;
+    line-height: 17px;
+    position: absolute;
+    right: 13px;
+    top: 11px;
+  }
+}
+
+.left-section {
+  position: absolute;
+  width: 320px;
+  height: 448px;
+  left: 32px;
+  top: 32px;
+  background-color: $secondary-color;
+  overflow: hidden;
+  box-shadow: 0px 4px 4px #e7e7ff;
+  border-radius: 5px;
+  transition: 0.5s;
+
+  &-heading {
+    position: absolute;
+    width: 226px;
+    height: 58px;
+    left: 46px;
+    top: 128px;
+
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 58px;
+    /* identical to box height */
+    white-space: nowrap;
+    color: #ffffff;
+  }
+
+  &-description {
+    position: absolute;
+    width: 264px;
+    height: 38px;
+    left: 46px;
+    top: 188px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #ffffff;
+  }
+
+  .earth {
+    @include earth;
+    position: absolute;
+    right: 136.08px;
+    top: 293.42px;
+  }
+
+  .moon {
+    @include moon;
+    position: absolute;
+    left: 143.38px;
+    top: 330.45px;
+  }
+}
+
+
+
+.right-form {
+  position: relative;
+  width: 320px;
+  height: 448px;
+  left: 400px;
+  top: 47px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px;
+  gap: 16px;
+  transition: 0.5s;
+
+  .information {
+    width: 300px;
+    height: 39px;
+    border: 2px solid #8477c9;
+    box-shadow: 0px 4px 8px #e7e7ff;
+    border-radius: 5px;
+    position: relative;
+
+    &-icon {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: 3px;
+      left: 10px;
+    }
+
+    &-text {
+      position: absolute;
+      width: 200px;
+      height: 20px;
+      left: 43.69px;
+      top: 11px;
+
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 14px;
+      white-space: nowrap;
+      color: #8477c9;
+    }
+  }
+
+  .submit {
+    width: 300px;
+    height: 43px;
+    background: $secondary-color;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+  }
+}
+
+
+.left-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px;
+  gap: 16px;
+
+  position: absolute;
+  width: 332px;
+  height: 337px;
+  left: 32px;
+  top: 87.5px;
+  transition: 0.5s;
+
+  .amount-input {
+    background-color: #fff;
+    color: #A6A6A6;
+    border: 1px solid #BFBFBF;
+
+    &-field:disabled,
+    &-field::placeholder {
+      background-color: #fff;
+      color: #A6A6A6;
+    }
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-decoration-line: underline;
+    color: $secondary-color;
+  }
+
+}
+
+.right-section {
+  position: absolute;
+  width: 320px;
+  height: 448px;
+  left: 412px;
+  top: 32px;
+
+  background: $secondary-color;
+  box-shadow: 0px 4px 4px #e7e7ff;
+  border-radius: 5px;
+
+  overflow: hidden;
+
+  transition: 0.5s;
+
+
+  .earth {
+    @include earth;
+    position: absolute;
+    right: 136.08px;
+    top: 293.42px;
+  }
+
+  .moon {
+    @include moon;
+    position: absolute;
+    left: 143.38px;
+    top: 330.45px;
+  }
+
+  @mixin font-setting {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    color: #ffffff;
+    white-space: nowrap;
+  }
+
+  .result-heading {
+    @include font-setting;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+
+  }
+
+  .breakdown-heading {
+    @include font-setting;
+    position: absolute;
+    top: 131px;
+    left: 21px;
+  }
+
+  .result {
+    position: absolute;
+    width: 280px;
+    height: 70px;
+    left: 20px;
+    top: 45px;
+
+    background: #ffffff;
+    border-radius: 5px;
+    text-align: center;
+    padding: 1.1rem;
+
+    span {
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 43px;
+
+      color: #8477c9;
+    }
+  }
+
+  .breakdown {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    position: absolute;
+    width: 278px;
+    min-height: 280px;
+    top: 155px;
+    left: 20px;
+
+    .breakdown-container {
+      width: 280px;
+      height: 45px;
+      background: #ffffff;
+      border-radius: 3px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1.5rem;
+
+      &-left {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+        color: #000000;
+      }
+
+      &-right {
+
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        /* identical to box height */
+        color: $secondary-color;
+
+      }
+    }
+  }
+
+  .media-go-back {
+    display: none;
+  }
+
+}
+
+
+
+@media screen and (max-width: 1200px) {
+
+  .app-background {
+    background-color: #fff;
+    box-shadow: 0px 4px 17px rgba(0, 0, 0, 0.25);
+    border-radius: 0.5rem;
+    width: 320px;
+    height: 512px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  .left-section {
+    display: none;
+    transition: 0.5s;
+  }
+
+  .right-form {
+    position: relative;
+    width: 320px;
+    height: 512px;
+    left: -5px;
+    top: 0px;
+    padding-top: 5rem;
+    background: transparent;
+    transition: 0.5s;
+  }
+
+
+  .left-form {
+    display: none;
+    transition: 0.5s;
+  }
+
+  .right-section {
+    position: relative;
+    width: 320px;
+    height: 512px;
+    left: 0px;
+    top: 0px;
+    transition: 0.5s;
+
+    .media-go-back {
+      display: block;
+      position: absolute;
+      bottom: 5rem;
+      left: 20px;
+      font-size: 1.5rem;
+      font-weight: 400;
+      line-height: 17px;
+      text-decoration-line: underline;
+
+    }
+  }
+
+}
