@@ -57,6 +57,7 @@
 
   /* identical to box height */
   color: #000000;
+  transition: 0.5s;
 }
 
 .select-input {
@@ -429,6 +430,12 @@
     top: 0px;
     padding-top: 5rem;
     background: transparent;
+    transition: 0.5s;
+  }
+
+  .form-heading {
+    padding-left: 1.6rem;
+    white-space: nowrap;
     transition: 0.5s;
   }
 
