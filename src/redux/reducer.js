@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   country: "Australia",
-  year: "2020 - 2021",
+  year: "2022 - 2023",
   amount: 0,
 };
 

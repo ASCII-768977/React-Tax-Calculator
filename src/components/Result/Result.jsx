@@ -9,16 +9,6 @@ import {
   totalTaxFormat,
 } from "../utils/GeneralFunctions";
 
-const countryList = [
-  "Australia",
-  "United States",
-  "China",
-  "Canada",
-  "New Zealand",
-];
-
-const yearList = ["2020 - 2021", "2019 - 2020", "2018 - 2019", "2017 - 2018"];
-
 const Result = () => {
   const country = useSelector((state) => state.selections.country);
   const year = useSelector((state) => state.selections.year);
@@ -26,34 +16,35 @@ const Result = () => {
   const taxBreakdown = calculateTax(country, year, amount);
 
   return (
-    <section className="app-background">
+    <section className="app-background" data-testid="result">
       <form action="#" className="left-form">
         <h2 className="form-heading">Your tax result</h2>
         <label htmlFor="country" className="label-description">
           Select your country of residence *
         </label>
-        <Selector isDisabled={true} value={country} />
+        <Selector isDisabled={true} value={country} id="country" />
         <label htmlFor="year" className="label-description">
           Select an income year *
         </label>
-        <Selector isDisabled={true} value={year} />
+        <Selector isDisabled={true} value={year} id="year" />
         <label htmlFor="amount" className="label-description">
           Enter your total taxable income for the income year *
         </label>
         <div className="amount-input">
           <div className="amount-input-sign">$</div>
           <input
-            type="number"
+            type="text"
             id="amount"
             name="amount"
             className="amount-input-field"
             placeholder={formatNumber(amount)}
+            value={formatNumber(amount)}
             disabled
           />
           <div className="amount-input-foot">.00</div>
         </div>
         <Link to="/">
-          <p>Go back to the previous screen</p>
+          <p className="media-go-back">Go back to the previous screen</p>
         </Link>
       </form>
 

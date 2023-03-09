@@ -18,7 +18,7 @@ describe("selection reducer", () => {
   test("should store the selections correctly", () => {
     const selections = {
       country: "Canada",
-      year: "2021 - 2022",
+      year: "2022 - 2023",
       amount: 100,
     };
 
@@ -27,7 +27,7 @@ describe("selection reducer", () => {
     const state = store.getState().selections;
 
     expect(state.country).toBe("Canada");
-    expect(state.year).toBe("2021 - 2022");
+    expect(state.year).toBe("2022 - 2023");
     expect(state.amount).toBe(100);
   });
 });

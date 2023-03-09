@@ -1,7 +1,7 @@
 import React from "react";
 
 const Selector = (props) => {
-  const { isDisabled, options, value, setValue } = props;
+  const { isDisabled, options, value, setValue, id } = props;
 
   const handleOptionChange = (e) => {
     if (setValue) {
@@ -20,11 +20,11 @@ const Selector = (props) => {
   return (
     <>
       {isDisabled ? (
-        <select className="select-input" disabled>
+        <select className="select-input" id={id} disabled>
           <option>{value}</option>
         </select>
       ) : (
-        <select className="select-input" onChange={handleOptionChange}>
+        <select className="select-input" id={id} onChange={handleOptionChange}>
           {eachOption}
         </select>
       )}

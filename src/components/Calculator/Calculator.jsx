@@ -4,16 +4,8 @@ import Selector from "../Selector/Selector";
 import { storeSelections } from "../../redux/actions";
 import { Link } from "react-router-dom";
 import InformationLogo from "../../assets/information.svg";
-
-const countryList = [
-  "Australia",
-  "United States",
-  "China",
-  "Canada",
-  "New Zealand",
-];
-
-const yearList = ["2020 - 2021", "2019 - 2020", "2018 - 2019", "2017 - 2018"];
+import { countryList } from "../utils/InitialStates";
+import { yearList } from "../utils/InitialStates";
 
 const Calculator = (props) => {
   const [country, setCountry] = useState("Australia");
@@ -34,7 +26,7 @@ const Calculator = (props) => {
   };
 
   return (
-    <section className="app-background">
+    <section className="app-background" data-testid="calculator">
       <div className="left-section">
         <h2 className="left-section-heading">Tax-o-tron</h2>
         <p className="left-section-description">
@@ -62,6 +54,7 @@ const Calculator = (props) => {
           options={countryList}
           value={country}
           setValue={setCountry}
+          id="country"
         />
 
         <label htmlFor="year" className="label-description">
@@ -73,6 +66,7 @@ const Calculator = (props) => {
           options={yearList}
           value={year}
           setValue={setYear}
+          id="year"
         />
 
         <label htmlFor="amount" className="label-description">
