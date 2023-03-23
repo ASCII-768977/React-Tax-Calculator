@@ -1,5 +1,5 @@
 # React Tax Calculator
-### ***See Live Demo Here: https://serene-alpaca-ff52af.netlify.app***
+### ***See Live Demo Here: https://react-tax-calculator-demo.netlify.app/***
 A simple online tax calculator built with React and Redux that allows users to calculate their estimated taxable income based on their country of residence, income year, and total taxable income. 
 ## Installation
 Clone the repository and run the following command to install the dependencies:
